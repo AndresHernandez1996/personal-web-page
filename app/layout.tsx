@@ -1,19 +1,16 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import {  Host_Grotesk} from 'next/font/google';
 import './globals.css';
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-});
 
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
+const hostSans = Host_Grotesk({
+  variable: '--font-host-sans',
   subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700', '800'],
 });
 
 export const metadata: Metadata = {
-  title: 'Personal web page',
+  title: 'Personal web page - Andres Hernandez',
   description: 'A personal web page made with Next.js and TS',
 };
 
@@ -21,7 +18,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head />
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body>
+      <body className={hostSans.variable}>
+        {children}
+      </body> 
     </html>
   );
 }

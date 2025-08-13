@@ -30,25 +30,24 @@ export default function LocaleLayout({
           colorInfo: '#4B7BE5',
           colorWarning: '#FFA500',
           colorError: '#D7263D',
-          fontFamily: 'Geist, var(--font-geist-sans), var(--font-geist-mono), sans-serif',
-          borderRadius: 8,
+          fontFamily: 'var(--font-host-sans)',
+          fontSize: 16,
+          lineHeight: 1.5,
         },
-
         components: {
           Button: {
             colorPrimary: '#739e55',
-            borderRadius: 8,
-          },
-          Menu: {
-            colorPrimary: '#739e55',
-            itemBorderRadius: 8,
+            colorPrimaryHover: '#5a7c44',
+            colorPrimaryActive: '#4a6b3b',
           },
         },
       }}
     >
       <LocaleProvider locale={locale} messages={messages}>
-        <Header />
-        <main>{children}</main>
+        <div className="main-container">
+          <Header />
+          <main>{children}</main>
+        </div>
       </LocaleProvider>
     </ConfigProvider>
   );

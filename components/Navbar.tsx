@@ -57,20 +57,17 @@ export default function Navbar() {
             icon={<MenuOutlined />}
             type="primary"
             onClick={() => setDrawerOpen(true)}
-            style={{ fontSize: 24 }}
           />
           <Drawer
             title="Menú"
             placement="right"
             onClose={() => setDrawerOpen(false)}
             open={drawerOpen}
-            bodyStyle={{ padding: 0 }}
           >
             <Menu
               mode="vertical"
               items={menuItems}
               onClick={() => setDrawerOpen(false)}
-              style={{ border: 'none' }}
             />
           </Drawer>
         </>
