@@ -17,5 +17,5 @@ export default function LocaleLayout({
 
   if (!messages) return notFound();
 
-  return <h1>jOLA</h1>;
+  return <h1>About me</h1>;
 }

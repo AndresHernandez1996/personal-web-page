@@ -32,7 +32,6 @@ export default function LocaleLayout({
           colorError: '#D7263D',
           fontFamily: 'var(--font-host-sans)',
           fontSize: 16,
-          lineHeight: 1.5,
         },
         components: {
           Button: {

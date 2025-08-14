@@ -1,77 +1,156 @@
 'use client';
 
 import React, { useState } from 'react';
-import Link from 'next/link';
-import { Menu, Dropdown, Button, MenuProps, Drawer, Grid } from 'antd';
-import { MenuOutlined, DownOutlined } from '@ant-design/icons';
-const { useBreakpoint } = Grid;
+import { DownOutlined, GithubOutlined, LinkedinFilled, MoreOutlined } from '@ant-design/icons';
+import type { MenuProps } from 'antd';
+import { Menu, Col, Row, Dropdown, Button, Grid, Space } from 'antd';
+import Image from 'next/image';
+import YayoLogo from '../public/yayo_logo.png';
 import { useLocale, t } from './LocaleProvider';
 import { usePathname } from 'next/navigation';
+import Link from 'next/link';
 
-export default function Navbar() {
-  const screens = useBreakpoint();
-  const isMobile = !screens.md;
+type MenuItem = Required<MenuProps>['items'][number];
 
+const App: React.FC = () => {
+  const [current, setCurrent] = useState('home');
   const locale = useLocale();
   const pathname = usePathname();
   const segments = pathname.split('/');
-  const [drawerOpen, setDrawerOpen] = useState(false);
   const [, , ...rest] = segments;
   const restPath = rest.length > 0 ? `/${rest.join('/')}` : '/';
 
-  const menuItems = [
-    { key: 'home', label: <Link href={`/${locale}`}>{t('navbar_about')}</Link> },
-    { key: 'about', label: <Link href={`/${locale}/about`}>{t('navbar_experience')}</Link> },
-    { key: 'dashboard', label: <Link href={`/${locale}/dashboard`}>{t('navbar_contact')}</Link> },
+  const screens = Grid.useBreakpoint();
+  const isMobile = !screens.md;
+
+  const aboutLabel = t('navbar_about');
+  const experienceLabel = t('navbar_experience');
+  const contactLabel = t('navbar_contact');
+  const langEsLabel = t('navbar_language_es');
+  const langEnLabel = t('navbar_language_en');
+
+  // Menu de escritorio (solo texto)
+  const textItems: MenuItem[] = [
+    { key: 'home', label: <Link href={`/${locale}`}>{aboutLabel}</Link> },
+    { key: 'about', label: <Link href={`/${locale}/about`}>{experienceLabel}</Link> },
+    { key: 'dashboard', label: <Link href={`/${locale}/dashboard`}>{contactLabel}</Link> },
   ];
 
-  const languages: MenuProps['items'] = [
-    { key: 'es', label: <Link href={`/es${restPath}`}>ES</Link> },
-    { key: 'en', label: <Link href={`/en${restPath}`}>EN</Link> },
+  // Menú compacto (móvil)
+  const compactItems: MenuItem[] = [
+    ...textItems,
+    {
+      key: 'github',
+      label: (
+        <a href="https://github.com/AndresHernandez1996" target="_blank" rel="noopener noreferrer">
+          GitHub
+        </a>
+      ),
+    },
+    {
+      key: 'linkedin',
+      label: (
+        <a
+          href="https://www.linkedin.com/in/andreshidalgo-datascientist/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          LinkedIn
+        </a>
+      ),
+    },
+    {
+      label: <>{locale.toUpperCase()}</>,
+      key: 'language',
+      children: [
+        { key: 'es', label: <Link href={`/es${restPath}`}>{langEsLabel}</Link> },
+        { key: 'en', label: <Link href={`/en${restPath}`}>{langEnLabel}</Link> },
+      ],
+    },
   ];
+
+  const onClick: MenuProps['onClick'] = (e) => setCurrent(e.key);
+
+  const langMenu: MenuProps['items'] = [
+    { key: 'es', label: <Link href={`/es${restPath}`}>{langEsLabel}</Link> },
+    { key: 'en', label: <Link href={`/en${restPath}`}>{langEnLabel}</Link> },
+  ];
+
+  const compactMenu = (
+    <Dropdown
+      placement="bottomRight"
+      trigger={['click']}
+      menu={{ items: compactItems, onClick }}
+      arrow
+    >
+      <Button type="text" aria-label="Open menu">
+        <MoreOutlined style={{ fontSize: 20 }} />
+      </Button>
+    </Dropdown>
+  );
 
   return (
-    <div style={{ display: 'flex', alignItems: 'center', height: '64px', width: '100%' }}>
-      <div style={{ color: '#fff', fontSize: '1.2rem', fontWeight: 'bold', marginRight: 'auto' }}>
-        <Link href={`/${locale}`} style={{ color: 'inherit' }}>
-          {t('welcome_message')}
-        </Link>
-      </div>
-      {!isMobile && (
-        <Menu
-          theme="light"
-          mode="horizontal"
-          selectable={false}
-          items={menuItems}
-          style={{ lineHeight: '64px' }}
-        />
-      )}
-      <Dropdown menu={{ items: languages }} trigger={['hover']}>
-        <Button type="primary">
-          {locale.toUpperCase()} <DownOutlined />
-        </Button>
-      </Dropdown>
-      {isMobile && (
-        <>
-          <Button
-            icon={<MenuOutlined />}
-            type="primary"
-            onClick={() => setDrawerOpen(true)}
-          />
-          <Drawer
-            title="Menú"
-            placement="right"
-            onClose={() => setDrawerOpen(false)}
-            open={drawerOpen}
-          >
+    <>
+      {isMobile ? (
+        <Row align="middle">
+          <Col xs={8} />
+          <Col xs={8} style={{ display: 'flex', justifyContent: 'center' }}>
+            <Link href={`/${locale}/home`} style={{ display: 'inline-block' }}>
+              <Image src={YayoLogo} alt="Yayo Logo" width={50} height={50} />
+            </Link>
+          </Col>
+          <Col xs={8} style={{ display: 'flex', justifyContent: 'flex-end' }}>
+            {compactMenu}
+          </Col>
+        </Row>
+      ) : (
+        <Row align="middle" wrap={false} style={{ width: '100%' }}>
+          <Col flex="none" style={{ display: 'flex', alignItems: 'center' }}>
+            <Link href={`/${locale}/home`} style={{ display: 'inline-block' }}>
+              <Image src={YayoLogo} alt="Yayo Logo" width={50} height={50} />
+            </Link>
+          </Col>
+
+          <Col flex="auto" style={{ display: 'flex', justifyContent: 'flex-end' }}>
             <Menu
-              mode="vertical"
-              items={menuItems}
-              onClick={() => setDrawerOpen(false)}
+              mode="horizontal"
+              onClick={onClick}
+              selectedKeys={[current]}
+              items={textItems}
+              style={{ borderBottom: 'none' }}
             />
-          </Drawer>
-        </>
+          </Col>
+
+          <Col flex="none" style={{ display: 'flex', justifyContent: 'flex-end' }}>
+            <Space size="large" align="center">
+              <a
+                href="https://github.com/AndresHernandez1996"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+              >
+                <GithubOutlined style={{ color: '#333', fontSize: 18 }} />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/andreshidalgo-datascientist/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+              >
+                <LinkedinFilled style={{ color: '#0077b5', fontSize: 18 }} />
+              </a>
+
+              <Dropdown menu={{ items: langMenu }} placement="bottomRight" arrow>
+                <Button type="text" aria-label="Language">
+                  {locale.toUpperCase()} <DownOutlined />
+                </Button>
+              </Dropdown>
+            </Space>
+          </Col>
+        </Row>
       )}
-    </div>
+    </>
   );
-}
+};
+
+export default App;
