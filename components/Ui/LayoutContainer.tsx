@@ -1,35 +1,39 @@
 'use client';
-// @typescript-eslint/no-explicit-any
-import React, { JSX } from 'react';
+
+import React from 'react';
 import styles from './ui.module.css';
 
 type Space = number | string;
+type Tag = React.ElementType;
 
-export type Container = {
-  /** Etiqueta HTML a renderizar (div por defecto) */
-  as?: keyof JSX.IntrinsicElements;
+type BaseProps = {
+  as?: Tag;
 
-  /** Padding (shorthands y por lado) */
+  // Padding
   p?: Space;
-  px?: Space; // padding-left & padding-right
-  py?: Space; // padding-top & padding-bottom
+  px?: Space;
+  py?: Space;
   pt?: Space;
   pr?: Space;
   pb?: Space;
   pl?: Space;
 
-  /** Margin (shorthands y por lado) */
+  // Margin
   m?: Space;
-  mx?: Space; // margin-left & margin-right
-  my?: Space; // margin-top & margin-bottom
+  mx?: Space;
+  my?: Space;
   mt?: Space;
   mr?: Space;
   mb?: Space;
   ml?: Space;
 
   className?: string;
+  style?: React.CSSProperties;
   children?: React.ReactNode;
-} & Omit<React.HTMLAttributes<HTMLElement>, 'className'>;
+};
+
+type LayoutContainerProps<T extends Tag> = BaseProps &
+  Omit<React.ComponentPropsWithoutRef<T>, keyof BaseProps | 'as' | 'style' | 'className'>;
 
 function toCss(v?: Space): string | undefined {
   if (v === undefined) return undefined;
@@ -37,11 +41,11 @@ function toCss(v?: Space): string | undefined {
 }
 
 /**
- * Box: contenedor de propósito general con props de spacing.
- * Ejemplo: <Box p={24} mt="2rem">Contenido</Box>
+ * Box/Container con props de spacing.
+ * Ej: <LayoutContainer as="section" p={24} mt="2rem">...</LayoutContainer>
  */
-export default function LayoutContainer({
-  as = 'div',
+export default function LayoutContainer<T extends Tag = 'div'>({
+  as,
   p,
   px,
   py,
@@ -60,8 +64,8 @@ export default function LayoutContainer({
   style,
   children,
   ...rest
-}: Container) {
-  const Comp = as as any;
+}: LayoutContainerProps<T>) {
+  const Comp: React.ElementType = as ?? 'div';
 
   const computedStyle: React.CSSProperties = {
     ...style,
@@ -80,7 +84,7 @@ export default function LayoutContainer({
   const cls = [styles.container, className].filter(Boolean).join(' ');
 
   return (
-    <Comp className={cls} style={computedStyle} {...rest}>
+    <Comp className={cls} style={computedStyle} {...(rest as React.ComponentPropsWithoutRef<T>)}>
       {children}
     </Comp>
   );
