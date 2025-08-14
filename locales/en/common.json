@@ -5,5 +5,9 @@
   "navbar_contact": "Contact",
   "welcome_message": "Welcome to my landing!",
   "navbar_language_en": "En",
-  "navbar_language_es": "Es"
+  "navbar_language_es": "Es",
+  "landing_greeting": "Hi, I'm Andrés Hernández",
+  "landing_title": "Junior Data Scientist & Frontend Developer (React/Next.js). I turn data into product: analysis, modeling, and visualization to drive clear decisions and accessible UIs, using Python/SQL, EDA, and metrics/dashboards.",
+  "landing_companies_title": "Companies I've worked with",
+  "landing_download_resume": "Download Resume"
 }

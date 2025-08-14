@@ -31,10 +31,10 @@ const { Title } = Typography;
 export default function LogoGrid() {
   return (
     <section className={styles.partners}>
-      <Divider orientation="center" plain className={styles.partnersDivider}>
-        <Title level={4}> Empresas con las que he trabajado</Title>
-      </Divider>
-
+      <Row justify="center" align="middle">
+        <Title level={4}>Empresas con las que he trabajado</Title>
+        <Divider className={styles.partnersDivider}></Divider>
+      </Row>
       <Row wrap justify="space-evenly" gutter={[0, 48]}>
         {logos.map((logo, i) => (
           <Col key={`${logo.alt}-${i}`}>
@@ -46,7 +46,7 @@ export default function LogoGrid() {
                 height={30}
                 className={styles.logoImg}
                 loading="lazy"
-                style={{ margin: '16px 48px' }}
+                style={{ margin: '16px' }}
               />
             </div>
           </Col>

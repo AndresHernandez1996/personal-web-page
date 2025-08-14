@@ -4,6 +4,7 @@ import { Row, Col, Button } from 'antd';
 import { DownloadOutlined } from '@ant-design/icons';
 import Image, { type StaticImageData } from 'next/image';
 import styles from './Landing.module.css';
+import { useT } from '@/components/LocaleProvider';
 import Yayo_pic from '../../public/images/yayo_landing.jpeg';
 
 type MainSectionProps = {
@@ -11,27 +12,26 @@ type MainSectionProps = {
   intro?: string;
   /** Ruta pública del PDF en /public */
   cvHref?: string;
-  /** Ruta pública de la foto en /public */
   photoSrc?: StaticImageData | string;
 };
 
 export default function MainSection({
-  title = '¡Hola! Soy Andrés Hernández',
-  intro = 'Data Scientist Jr + Frontend (React/Next.js). Convierto datos en producto: análisis, modelado y visualización orientados a decisiones claras y UIs accesibles, con Python/SQL, EDA y métricas/dashboards.',
   cvHref = '/cv/andres-hernandez-cv.pdf',
   photoSrc = Yayo_pic,
 }: MainSectionProps) {
+  const t = useT();
+
   return (
     <section className={styles.mainSection}>
       <Row gutter={[32, 32]} align="middle" justify="space-between" wrap>
-        {/* Texto */}
+        {/* Texto principal */}
         <Col xs={24} md={14}>
-          <h1 className={styles.heroTitle}>{title}</h1>
-          <p className={styles.heroIntro}>{intro}</p>
+          <h1 className={styles.heroTitle}>{t('landing_greeting')}</h1>
+          <p className={styles.heroIntro}>{t('landing_title')}</p>
 
           <a href={cvHref} download className={styles.cvLink} aria-label="Descargar CV">
             <Button type="primary" size="large" icon={<DownloadOutlined />}>
-              Descargar CV
+              {t('landing_download_resume')}
             </Button>
           </a>
         </Col>

@@ -10,9 +10,6 @@
 }
 
 .partnersDivider {
-  color: var(--color-secondary); /* tono suave; ajusta a tu tema */
-  font-weight: 600;
-  text-transform: none; /* o uppercase si lo prefieres */
   margin-bottom: 48px !important;
 }
 
