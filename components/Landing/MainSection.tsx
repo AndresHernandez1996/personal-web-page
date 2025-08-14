@@ -15,10 +15,7 @@ type MainSectionProps = {
   photoSrc?: StaticImageData | string;
 };
 
-export default function MainSection({
-  cvHref = '/cv/andres-hernandez-cv.pdf',
-  photoSrc = Yayo_pic,
-}: MainSectionProps) {
+export default function MainSection({ photoSrc = Yayo_pic }: MainSectionProps) {
   const t = useT();
 
   return (
@@ -29,7 +26,11 @@ export default function MainSection({
           <h1 className={styles.heroTitle}>{t('landing_greeting')}</h1>
           <p className={styles.heroIntro}>{t('landing_title')}</p>
 
-          <a href={cvHref} download className={styles.cvLink} aria-label="Descargar CV">
+          <a
+            target="_blank"
+            href="https://drive.google.com/file/d/1FMz40cvIyLs5kweCUPcOExSgZtLV7OIG/view?usp=sharing"
+            aria-label="Descargar CV"
+          >
             <Button type="primary" size="large" icon={<DownloadOutlined />}>
               {t('landing_download_resume')}
             </Button>
