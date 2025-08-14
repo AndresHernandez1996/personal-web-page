@@ -13,7 +13,7 @@ import Link from 'next/link';
 type MenuItem = Required<MenuProps>['items'][number];
 
 const App: React.FC = () => {
-  const [current, setCurrent] = useState('home');
+  const [current, setCurrent] = useState('/');
   const locale = useLocale();
   const t = useT();
   const pathname = usePathname();
@@ -29,9 +29,9 @@ const App: React.FC = () => {
 
   // Menu de escritorio (solo texto)
   const textItems: MenuItem[] = [
-    { key: 'home', label: <Link href={`/${locale}`}>{aboutLabel}</Link> },
-    { key: 'about', label: <Link href={`/${locale}/about`}>{experienceLabel}</Link> },
-    { key: 'dashboard', label: <Link href={`/${locale}/dashboard`}>{contactLabel}</Link> },
+    { key: 'home', label: <Link href={`/${locale}/`}>{aboutLabel}</Link> },
+    { key: 'about', label: <Link href={`/${locale}/experience`}>{experienceLabel}</Link> },
+    { key: 'dashboard', label: <Link href={`/${locale}/contact`}>{contactLabel}</Link> },
   ];
 
   // Menú compacto (móvil)
@@ -93,7 +93,7 @@ const App: React.FC = () => {
         <Row align="middle">
           <Col xs={8} />
           <Col xs={8} style={{ display: 'flex', justifyContent: 'center' }}>
-            <Link href={`/${locale}/home`} style={{ display: 'inline-block' }}>
+            <Link href={`/${locale}/`} style={{ display: 'inline-block' }}>
               <Image src={YayoLogo} alt="Yayo Logo" width={50} height={50} />
             </Link>
           </Col>
@@ -105,7 +105,7 @@ const App: React.FC = () => {
       <div className="nav-desktop">
         <Row align="middle" wrap={false} style={{ width: '100%' }}>
           <Col flex="none" style={{ display: 'flex', alignItems: 'center' }}>
-            <Link href={`/${locale}/home`} style={{ display: 'inline-block' }}>
+            <Link href={`/${locale}/`} style={{ display: 'inline-block' }}>
               <Image src={YayoLogo} alt="Yayo Logo" width={50} height={50} />
             </Link>
           </Col>

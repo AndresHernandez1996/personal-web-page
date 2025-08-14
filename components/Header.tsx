@@ -8,7 +8,15 @@ const { Header: AntHeader } = Layout;
 
 export default function Header() {
   return (
-    <AntHeader style={{ padding: 0, background: 'transparent' }}>
+    <AntHeader
+      style={{
+        position: 'sticky',
+        top: 0,
+        zIndex: 1,
+        background: '#ffffff',
+        padding: '0 16px',
+      }}
+    >
       <Navbar />
     </AntHeader>
   );

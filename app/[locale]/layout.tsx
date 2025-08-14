@@ -6,6 +6,7 @@ import AntdRegistry from '@/components/AntdRegistry';
 import Header from '@/components/Header';
 import esMessages from '@/locales/es/common.json';
 import enMessages from '@/locales/en/common.json';
+import Layout, { Content } from 'antd/es/layout/layout';
 
 export const generateStaticParams = () => [{ locale: 'es' }, { locale: 'en' }];
 
@@ -35,20 +36,13 @@ export default function LocaleLayout({
             fontFamily: 'var(--font-host-sans)',
             fontSize: 16,
           },
-          components: {
-            Button: {
-              colorPrimary: '#739e55',
-              colorPrimaryHover: '#5a7c44',
-              colorPrimaryActive: '#4a6b3b',
-            },
-          },
         }}
       >
         <LocaleProvider locale={locale} messages={messages}>
-          <div className="main-container">
+          <Layout>
             <Header />
-            <main>{children}</main>
-          </div>
+            <Content className="main-container">{children}</Content>
+          </Layout>
         </LocaleProvider>
       </ConfigProvider>
     </AntdRegistry>

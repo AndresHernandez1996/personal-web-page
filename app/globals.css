@@ -11,22 +11,20 @@
   --font-host-mono: 'Courier New', Courier, monospace;
 
   .main-container {
-    max-width: 1352px;
+    max-width: 1800px;
     margin: 0 auto;
-    padding: 0 16px;
+    padding: 0;
     box-sizing: border-box;
   }
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1304px) {
     .main-container {
       max-width: 100%;
-      padding: 0 8px;
     }
   }
 
   @media (max-width: 480px) {
     .main-container {
-      padding: 0 4px;
     }
   }
 }
@@ -50,6 +48,7 @@ body {
   justify-content: flex-end !important;
 }
 
+/* Navbar styles */
 .nav-mobile {
   display: none;
 }

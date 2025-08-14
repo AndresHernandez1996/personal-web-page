@@ -1,11 +1,13 @@
 'use client';
-import { useT } from '@/components/LocaleProvider';
+import Partners from '@/components/Landing/Partners';
+import MainSection from '@/components/Landing/MainSection';
+import LayoutContainer from '@/components/Ui/LayoutContainer';
 
 export default function HomePage() {
-  const t = useT();
   return (
-    <main>
-      <h1>{t('welcome_message')} Landing page</h1>
-    </main>
+    <LayoutContainer>
+      <MainSection />
+      <Partners />
+    </LayoutContainer>
   );
 }

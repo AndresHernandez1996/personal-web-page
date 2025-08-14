@@ -10,7 +10,7 @@ const hostSans = Host_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: 'Personal web page - Andres Hernandez',
+  title: 'Andres Hernandez - Personal Web Page',
   description: 'A personal web page made with Next.js and TS',
 };
 
