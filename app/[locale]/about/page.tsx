@@ -7,7 +7,6 @@ export const generateStaticParams = () => [{ locale: 'es' }, { locale: 'en' }];
 
 export default function LocaleLayout({
   params,
-  children,
 }: {
   params: { locale: string };
   children: ReactNode;
