@@ -1,5 +1,5 @@
 'use client';
-
+// @typescript-eslint/no-explicit-any
 import React, { JSX } from 'react';
 import styles from './ui.module.css';
 

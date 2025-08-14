@@ -35,7 +35,7 @@ export default function LogoGrid() {
         <Title level={4}> Empresas con las que he trabajado</Title>
       </Divider>
 
-      <Row wrap justify="space-evenly" gutter={[, 48]}>
+      <Row wrap justify="space-evenly" gutter={[0, 48]}>
         {logos.map((logo, i) => (
           <Col key={`${logo.alt}-${i}`}>
             <div className={styles.logoCard} role="img" aria-label={logo.alt}>
