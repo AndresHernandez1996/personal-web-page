@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap');
-
 :root {
   --background: #ffffff;
   --color-primary: #739e55;
@@ -35,7 +33,7 @@
 
 body {
   background: var(--background);
-  color: var(----color-terciary);
+  color: var(--color-terciary);
   font-family: var(--font-host-sans);
   font-size: 16px;
   font-weight: 400;
@@ -45,8 +43,25 @@ body {
 .ant-menu {
   cursor: pointer;
 }
+
 .ant-menu-overflow {
   width: 100% !important;
   display: flex !important;
   justify-content: flex-end !important;
+}
+
+.nav-mobile {
+  display: none;
+}
+.nav-desktop {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .nav-mobile {
+    display: block;
+  }
+  .nav-desktop {
+    display: none;
+  }
 }

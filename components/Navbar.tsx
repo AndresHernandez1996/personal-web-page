@@ -21,7 +21,7 @@ const App: React.FC = () => {
   const restPath = rest.length > 0 ? `/${rest.join('/')}` : '/';
 
   const screens = Grid.useBreakpoint();
-  const isMobile = !screens.md;
+  const isMobile = screens.md === false;
 
   const aboutLabel = t('navbar_about');
   const experienceLabel = t('navbar_experience');
@@ -91,7 +91,7 @@ const App: React.FC = () => {
 
   return (
     <>
-      {isMobile ? (
+      <div className="nav-mobile">
         <Row align="middle">
           <Col xs={8} />
           <Col xs={8} style={{ display: 'flex', justifyContent: 'center' }}>
@@ -103,7 +103,8 @@ const App: React.FC = () => {
             {compactMenu}
           </Col>
         </Row>
-      ) : (
+      </div>
+      <div className="nav-desktop">
         <Row align="middle" wrap={false} style={{ width: '100%' }}>
           <Col flex="none" style={{ display: 'flex', alignItems: 'center' }}>
             <Link href={`/${locale}/home`} style={{ display: 'inline-block' }}>
@@ -148,7 +149,7 @@ const App: React.FC = () => {
             </Space>
           </Col>
         </Row>
-      )}
+      </div>
     </>
   );
 };
