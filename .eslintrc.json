@@ -11,7 +11,8 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
-    "prettier"
+    "prettier",
+    "next/typescript"
   ],
   "plugins": ["@typescript-eslint", "react", "react-hooks"],
   "parserOptions": {
@@ -21,7 +22,10 @@
   },
   "rules": {
     "react/react-in-jsx-scope": "off",
-  "@typescript-eslint/no-unused-vars": ["warn", { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }],
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }
+    ],
     "@typescript-eslint/explicit-module-boundary-types": "off"
   }
 }
