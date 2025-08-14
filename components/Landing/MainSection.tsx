@@ -26,15 +26,15 @@ export default function MainSection({ photoSrc = Yayo_pic }: MainSectionProps) {
           <h1 className={styles.heroTitle}>{t('landing_greeting')}</h1>
           <p className={styles.heroIntro}>{t('landing_title')}</p>
 
-          <a
+          <Button
             target="_blank"
             href="https://drive.google.com/file/d/1FMz40cvIyLs5kweCUPcOExSgZtLV7OIG/view?usp=sharing"
-            aria-label="Descargar CV"
+            type="primary"
+            size="large"
+            icon={<DownloadOutlined />}
           >
-            <Button type="primary" size="large" icon={<DownloadOutlined />}>
-              {t('landing_download_resume')}
-            </Button>
-          </a>
+            {t('landing_download_resume')}
+          </Button>
         </Col>
 
         {/* Foto */}
