@@ -3,10 +3,10 @@
 import React, { useState } from 'react';
 import { DownOutlined, GithubOutlined, LinkedinFilled, MoreOutlined } from '@ant-design/icons';
 import type { MenuProps } from 'antd';
-import { Menu, Col, Row, Dropdown, Button, Grid, Space } from 'antd';
+import { Menu, Col, Row, Dropdown, Button, Space } from 'antd';
 import Image from 'next/image';
 import YayoLogo from '../public/yayo_logo.png';
-import { useLocale, t } from './LocaleProvider';
+import { useLocale, useT } from './LocaleProvider';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 
@@ -15,13 +15,11 @@ type MenuItem = Required<MenuProps>['items'][number];
 const App: React.FC = () => {
   const [current, setCurrent] = useState('home');
   const locale = useLocale();
+  const t = useT();
   const pathname = usePathname();
   const segments = pathname.split('/');
   const [, , ...rest] = segments;
   const restPath = rest.length > 0 ? `/${rest.join('/')}` : '/';
-
-  const screens = Grid.useBreakpoint();
-  const isMobile = screens.md === false;
 
   const aboutLabel = t('navbar_about');
   const experienceLabel = t('navbar_experience');
