@@ -1,7 +1,13 @@
 'use client';
 
 import React, { useState } from 'react';
-import { DownOutlined, GithubOutlined, LinkedinFilled, MoreOutlined } from '@ant-design/icons';
+import {
+  DownOutlined,
+  GithubOutlined,
+  LinkedinFilled,
+  MoreOutlined,
+  MailOutlined,
+} from '@ant-design/icons';
 import type { MenuProps } from 'antd';
 import { Menu, Col, Row, Dropdown, Button, Space } from 'antd';
 import Image from 'next/image';
@@ -21,22 +27,26 @@ const App: React.FC = () => {
   const [, , ...rest] = segments;
   const restPath = rest.length > 0 ? `/${rest.join('/')}` : '/';
 
-  const aboutLabel = t('navbar_about');
-  const experienceLabel = t('navbar_experience');
-  const contactLabel = t('navbar_contact');
+  // const aboutLabel = t('navbar_about');
+  // const experienceLabel = t('navbar_experience');
+  // const contactLabel = t('navbar_contact');
   const langEsLabel = t('navbar_language_es');
   const langEnLabel = t('navbar_language_en');
 
   // Menu de escritorio (solo texto)
   const textItems: MenuItem[] = [
-    { key: 'home', label: <Link href={`/${locale}/`}>{aboutLabel}</Link> },
-    { key: 'about', label: <Link href={`/${locale}/experience`}>{experienceLabel}</Link> },
-    { key: 'dashboard', label: <Link href={`/${locale}/contact`}>{contactLabel}</Link> },
+    // { key: 'home', label: <Link href={`/${locale}/about`}>{aboutLabel}</Link> },
+    // { key: 'about', label: <Link href={`/${locale}/experience`}>{experienceLabel}</Link> },
+    // { key: 'dashboard', label: <Link href={`/${locale}/contact`}>{contactLabel}</Link> },
   ];
 
   // Menú compacto (móvil)
   const compactItems: MenuItem[] = [
     ...textItems,
+    {
+      key: 'email',
+      label: <a href="mailto:andrse@demo.com?subject=Consulta%20desde%20tu%20portafolio">Email</a>,
+    },
     {
       key: 'github',
       label: (
@@ -122,6 +132,12 @@ const App: React.FC = () => {
 
           <Col flex="none" style={{ display: 'flex', justifyContent: 'flex-end' }}>
             <Space size="large" align="center">
+              <a
+                href="mailto:andrse@demo.com?subject=Consulta%20desde%20tu%20portafolio"
+                aria-label="Email"
+              >
+                <MailOutlined style={{ color: '#d93025', fontSize: 18 }} />
+              </a>
               <a
                 href="https://github.com/AndresHernandez1996"
                 target="_blank"

@@ -46,7 +46,7 @@ export default function LogoGrid() {
                 height={30}
                 className={styles.logoImg}
                 loading="lazy"
-                style={{ margin: '16px' }}
+                style={{ margin: '16px ' }}
               />
             </div>
           </Col>
