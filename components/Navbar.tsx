@@ -28,7 +28,7 @@ const App: React.FC = () => {
   const restPath = rest.length > 0 ? `/${rest.join('/')}` : '/';
 
   const aboutLabel = t('navbar_about');
-  const experienceLabel = t('navbar_experience');
+  // const experienceLabel = t('navbar_experience');
   // const contactLabel = t('navbar_contact');
   const langEsLabel = t('navbar_language_es');
   const langEnLabel = t('navbar_language_en');
@@ -36,7 +36,7 @@ const App: React.FC = () => {
   // Menu de escritorio (solo texto)
   const textItems: MenuItem[] = [
     { key: 'home', label: <Link href={`/${locale}/about`}>{aboutLabel}</Link> },
-    { key: 'about', label: <Link href={`/${locale}/experience`}>{experienceLabel}</Link> },
+    // { key: 'about', label: <Link href={`/${locale}/experience`}>{experienceLabel}</Link> },
     // { key: 'dashboard', label: <Link href={`/${locale}/contact`}>{contactLabel}</Link> },
   ];
 
@@ -103,7 +103,11 @@ const App: React.FC = () => {
         <Row align="middle">
           <Col xs={8} />
           <Col xs={8} style={{ display: 'flex', justifyContent: 'center' }}>
-            <Link href={`/${locale}/`} style={{ display: 'inline-block' }}>
+            <Link
+              href={`/${locale}/`}
+              onClick={() => setCurrent('/')}
+              style={{ display: 'inline-block' }}
+            >
               <Image src={YayoLogo} alt="Yayo Logo" width={50} height={50} />
             </Link>
           </Col>
@@ -116,7 +120,13 @@ const App: React.FC = () => {
         <Row align="middle" wrap={false} style={{ width: '100%' }}>
           <Col flex="none" style={{ display: 'flex', alignItems: 'center' }}>
             <Link href={`/${locale}/`} style={{ display: 'inline-block' }}>
-              <Image src={YayoLogo} alt="Yayo Logo" width={50} height={50} />
+              <Image
+                src={YayoLogo}
+                onClick={() => setCurrent('/')}
+                alt="Yayo Logo"
+                width={50}
+                height={50}
+              />
             </Link>
           </Col>
 

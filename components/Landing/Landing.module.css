@@ -19,8 +19,10 @@
 }
 
 .logoImg {
-  max-height: 60px; /* ajusta a tu altura */
-  height: auto;
+  max-height: 60px;
+  height: 55px;
+  width: auto;
+
   object-fit: contain;
   filter: saturate(0) contrast(0.7) brightness(1.25);
   transition: filter 0.35s ease; /* ← suavidad del cambio */
