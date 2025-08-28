@@ -149,6 +149,10 @@
   .monstera {
     display: none;
   }
+  .historySection {
+    padding-left: 28px !important;
+    padding-right: 28px !important;
+  }
   .factsection {
     padding-bottom: 50px;
   }
