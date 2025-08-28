@@ -103,7 +103,11 @@ const App: React.FC = () => {
         <Row align="middle">
           <Col xs={8} />
           <Col xs={8} style={{ display: 'flex', justifyContent: 'center' }}>
-            <Link href={`/${locale}/`} style={{ display: 'inline-block' }}>
+            <Link
+              href={`/${locale}/`}
+              onClick={() => setCurrent('/')}
+              style={{ display: 'inline-block' }}
+            >
               <Image src={YayoLogo} alt="Yayo Logo" width={50} height={50} />
             </Link>
           </Col>
@@ -116,7 +120,13 @@ const App: React.FC = () => {
         <Row align="middle" wrap={false} style={{ width: '100%' }}>
           <Col flex="none" style={{ display: 'flex', alignItems: 'center' }}>
             <Link href={`/${locale}/`} style={{ display: 'inline-block' }}>
-              <Image src={YayoLogo} alt="Yayo Logo" width={50} height={50} />
+              <Image
+                src={YayoLogo}
+                onClick={() => setCurrent('/')}
+                alt="Yayo Logo"
+                width={50}
+                height={50}
+              />
             </Link>
           </Col>
 

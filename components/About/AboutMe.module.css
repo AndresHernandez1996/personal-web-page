@@ -5,6 +5,20 @@
   padding: 90px 82px 60px;
 }
 
+.historySection {
+  width: 100%;
+  background: inherit; /* verde */
+  color: var(--color-secondary);
+  padding: 80px 82px 0;
+}
+
+.factsection {
+  width: 100%;
+  background: inherit; /* verde */
+  color: var(--color-secondary);
+  padding: 60px 82px 0;
+}
+
 .darkSection {
   background: var(--color-secondary); /* verde */
   color: #fff;
@@ -24,6 +38,11 @@
   text-align: left;
   font-size: clamp(18px, 1.8vw, 20px);
   font-weight: 500;
+}
+
+.history {
+  font-size: 18px;
+  text-align: justify;
 }
 
 .logoCard:hover .logoImg,
@@ -61,7 +80,7 @@
 
 .heroTitle {
   margin: 0 0 8px;
-  font-size: clamp(38px, 4.2vw, 54px);
+  font-size: clamp(42px, 4.2vw, 54px);
   line-height: 1.15;
   letter-spacing: -0.02em;
   font-weight: 600;
@@ -126,5 +145,8 @@
   .photoWrap {
     width: 70vw;
     height: 70vw;
+  }
+  .monstera {
+    display: none;
   }
 }

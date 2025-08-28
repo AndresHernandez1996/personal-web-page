@@ -23,6 +23,7 @@ export default function NotFound() {
           alt="Not found"
           style={{ width: 'min(420px, 80vw)', height: 'auto' }}
           sizes="(max-width: 768px) 80vw, 420px"
+          priority
         />
         <h1 style={{ margin: '24px 0' }}>Missing something?</h1>
         <Link href="/">

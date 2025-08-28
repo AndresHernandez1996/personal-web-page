@@ -4,7 +4,7 @@ import { Row, Col, Button } from 'antd';
 import { DownloadOutlined } from '@ant-design/icons';
 import Image, { type StaticImageData } from 'next/image';
 import styles from './Landing.module.css';
-import { useT } from '@/components/LocaleProvider';
+import { useT, useLocale } from '@/components/LocaleProvider';
 import Yayo_pic from '../../public/images/yayo_landing.jpeg';
 
 type MainSectionProps = {
@@ -17,6 +17,7 @@ type MainSectionProps = {
 
 export default function MainSection({ photoSrc = Yayo_pic }: MainSectionProps) {
   const t = useT();
+  const locale = useLocale();
 
   return (
     <section className={styles.mainSection}>
@@ -28,7 +29,11 @@ export default function MainSection({ photoSrc = Yayo_pic }: MainSectionProps) {
 
           <Button
             target="_blank"
-            href="https://drive.google.com/file/d/1FMz40cvIyLs5kweCUPcOExSgZtLV7OIG/view?usp=sharing"
+            href={
+              locale === 'en'
+                ? 'https://drive.google.com/file/d/1eeMzHw4lT1jmB4iTy89lCNpbTvPLiF1H/view?usp=sharing'
+                : 'https://drive.google.com/file/d/1-GI7H7yo8CezMLsyKBWEhgh2vJSLg7Zg/view?usp=sharing'
+            }
             type="primary"
             size="large"
             icon={<DownloadOutlined />}

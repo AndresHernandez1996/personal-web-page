@@ -23,5 +23,7 @@
   "about_subtitle": "Soy desarrollador Front-End y Cientifico de datos Jr radicado en NYC",
   "about_description": "Desde 2019 me especializo en desarrollo Front-End con React, Next.js y TypeScript, priorizando rendimiento y accesibilidad. Soy de la Ciudad de México y vivo en Nueva York. Cuando no programo, cuido mis plantas.",
 
-  "about_skills": "Habilidades técnicas"
+  "about_skills": "Habilidades técnicas",
+  "about_history_title": "Un poco de mi historia",
+  "about_history": "Comencé en tecnología en 2018, mientras trabajaba en Rappi. Me fascinó crear soluciones y automatizar procesos, así que di el salto al bootcamp de Full-Stack en Ironhack. Desde entonces me enfoqué en el Front-End: he construido productos con React y Next.js para organizaciones como Zurich, MetLife y el Gobierno de Guadalajara, además de proyectos de consultoría (por ejemplo, una plataforma de auditorías para retail y dashboards en tiempo real con ECharts). Para complementar, cursé un programa de nueve meses en Ciencia de Datos en TripleTen (Python, SQL, EDA y ML), lo que me ayuda a tomar decisiones guiadas por datos en cada proyecto."
 }

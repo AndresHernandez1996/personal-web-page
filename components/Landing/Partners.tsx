@@ -45,8 +45,6 @@ export default function LogoGrid() {
               <Image
                 src={logo.src}
                 alt={logo.alt}
-                width={180}
-                height={30}
                 className={styles.logoImg}
                 loading="lazy"
                 style={{ margin: '16px ' }}

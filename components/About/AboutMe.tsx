@@ -200,7 +200,12 @@ const AboutMe: React.FC = () => {
           ))}
         </Row>
       </section>
-      <section className={styles.mainSection}>
+      <section className={styles.historySection}>
+        <p className={styles.skills}>{t('about_history_title')}</p>
+        <div className={styles.history}>{t('about_history')}</div>
+        <Divider />
+      </section>
+      <section className={styles.factsection}>
         <p className={styles.skills}>{t('about_random_facts_title')}</p>
         <Row gutter={[24, 24]} align="middle" justify="center" wrap>
           <Col lg={12} md={24} sm={24} xs={24} style={{ textAlign: 'center' }}>
