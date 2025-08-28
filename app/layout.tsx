@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Host_Grotesk } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/next';
 import 'antd/dist/reset.css';
 import './globals.css';
 
@@ -18,7 +19,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head />
-      <body className={hostSans.variable}>{children}</body>
+      <body className={hostSans.variable}>
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
