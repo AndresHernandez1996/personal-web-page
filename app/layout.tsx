@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Host_Grotesk } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import 'antd/dist/reset.css';
 import './globals.css';
 
@@ -22,6 +23,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={hostSans.variable}>
         {children}
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
