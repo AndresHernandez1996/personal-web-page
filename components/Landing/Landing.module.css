@@ -1,0 +1,88 @@
+.mainSection {
+  width: inherit;
+  background: var(--color-secondary); /* verde */
+  color: #fff;
+  padding: 100px 82px;
+}
+
+.partners {
+  padding: 48px 32px;
+}
+
+.partnersDivider {
+  margin-bottom: 48px !important;
+}
+
+.logoCard:hover .logoImg,
+.logoCard:focus-visible .logoImg {
+  filter: saturate(1) contrast(0.7) brightness(1.25);
+}
+
+.logoImg {
+  max-height: 60px; /* ajusta a tu altura */
+  height: auto;
+  object-fit: contain;
+  filter: saturate(0) contrast(0.7) brightness(1.25);
+  transition: filter 0.35s ease; /* ← suavidad del cambio */
+  cursor: default;
+}
+
+/* Accesibilidad: si el usuario prefiere menos animaciones */
+@media (prefers-reduced-motion: reduce) {
+  .logoImg {
+    transition: none;
+  }
+}
+
+.heroTitle {
+  margin: 0 0 12px;
+  font-size: clamp(28px, 3.2vw, 44px);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.heroIntro {
+  margin: 0 0 24px;
+  font-size: clamp(16px, 1.6vw, 18px);
+  opacity: 0.95;
+}
+
+.cvLink {
+  text-decoration: none;
+}
+
+.photoCol {
+  text-align: center;
+}
+
+.photoWrap {
+  display: inline-block;
+  border-radius: 9999px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.photo {
+  display: block;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease;
+  border: 4px solid #f7f7f7;
+
+  border-radius: 9999px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  cursor: default;
+}
+
+/* Mobile tweaks */
+@media (max-width: 767px) {
+  .mainSection {
+    padding: 56px 16px;
+  }
+  .photoWrap {
+    width: 70vw;
+    height: 70vw;
+  }
+}

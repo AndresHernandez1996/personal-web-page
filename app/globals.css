@@ -1,26 +1,66 @@
-@import "tailwindcss";
-
 :root {
   --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
+  --color-primary: #739e55;
+  --color-secondary: #3c4c44;
+  --color-terciary: #040404;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --font-sans: var(--font-host-sans);
+  --font-mono: var(--font-host-mono);
+  --font-host-sans: 'Host Grotesk', sans-serif;
+  --font-host-mono: 'Courier New', Courier, monospace;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  .main-container {
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
   }
+
+  @media (max-width: 1304px) {
+    .main-container {
+      max-width: 100%;
+    }
+  }
+
+  /* @media (max-width: 480px) {
+    .main-container {
+    }
+  } */
 }
 
 body {
   background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--color-terciary);
+  font-family: var(--font-host-sans);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.ant-menu {
+  cursor: pointer;
+}
+
+.ant-menu-overflow {
+  width: 100% !important;
+  display: flex !important;
+  justify-content: flex-end !important;
+}
+
+/* Navbar styles */
+.nav-mobile {
+  display: none;
+}
+.nav-desktop {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .nav-mobile {
+    display: block;
+  }
+  .nav-desktop {
+    display: none;
+  }
 }
