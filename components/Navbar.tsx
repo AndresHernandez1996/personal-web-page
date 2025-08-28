@@ -27,16 +27,16 @@ const App: React.FC = () => {
   const [, , ...rest] = segments;
   const restPath = rest.length > 0 ? `/${rest.join('/')}` : '/';
 
-  // const aboutLabel = t('navbar_about');
-  // const experienceLabel = t('navbar_experience');
+  const aboutLabel = t('navbar_about');
+  const experienceLabel = t('navbar_experience');
   // const contactLabel = t('navbar_contact');
   const langEsLabel = t('navbar_language_es');
   const langEnLabel = t('navbar_language_en');
 
   // Menu de escritorio (solo texto)
   const textItems: MenuItem[] = [
-    // { key: 'home', label: <Link href={`/${locale}/about`}>{aboutLabel}</Link> },
-    // { key: 'about', label: <Link href={`/${locale}/experience`}>{experienceLabel}</Link> },
+    { key: 'home', label: <Link href={`/${locale}/about`}>{aboutLabel}</Link> },
+    { key: 'about', label: <Link href={`/${locale}/experience`}>{experienceLabel}</Link> },
     // { key: 'dashboard', label: <Link href={`/${locale}/contact`}>{contactLabel}</Link> },
   ];
 

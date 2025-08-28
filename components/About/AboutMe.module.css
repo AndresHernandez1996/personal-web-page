@@ -2,13 +2,13 @@
   width: 100%;
   background: inherit; /* verde */
   color: var(--color-secondary);
-  padding: 100px 82px 0;
+  padding: 90px 82px 60px;
 }
 
 .darkSection {
   background: var(--color-secondary); /* verde */
   color: #fff;
-  padding: 100px 82px 0;
+  padding: 90px 82px 100px;
 }
 
 .partners {
@@ -18,10 +18,29 @@
 .partnersDivider {
   margin-bottom: 48px !important;
 }
+.factItem {
+  margin-bottom: 12px;
+  opacity: 0.95;
+  text-align: left;
+  font-size: clamp(18px, 1.8vw, 20px);
+  font-weight: 500;
+}
 
 .logoCard:hover .logoImg,
 .logoCard:focus-visible .logoImg {
   filter: saturate(1) contrast(0.7) brightness(1.25);
+}
+
+.carouselImage {
+  display: block;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease;
+  max-height: 160px;
+  border: 4px solid rgba(255, 255, 255, 0.1);
 }
 
 .logoImg {
@@ -41,14 +60,29 @@
 }
 
 .heroTitle {
-  margin: 0 0 12px;
-  font-size: clamp(28px, 3.2vw, 44px);
+  margin: 0 0 8px;
+  font-size: clamp(38px, 4.2vw, 54px);
   line-height: 1.15;
   letter-spacing: -0.02em;
+  font-weight: 600;
+}
+
+.heroSubtitle {
+  margin: 0 0 12px;
+  font-size: clamp(24px, 1.6vw, 24px);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+}
+
+.skills {
+  text-align: center;
+  margin-bottom: 32px;
+  font-size: clamp(28px, 3.2vw, 34px);
+  font-weight: 600;
 }
 
 .heroIntro {
-  margin: 0 0 24px;
   font-size: clamp(16px, 1.6vw, 18px);
   opacity: 0.95;
 }
@@ -67,6 +101,11 @@
   overflow: hidden;
   background: rgba(255, 255, 255, 0.12);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  width: 360px;
+  height: 360px;
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 24px;
+  transition: transform 0.3s ease;
 }
 
 .photo {
@@ -78,6 +117,9 @@
 
 /* Mobile tweaks */
 @media (max-width: 767px) {
+  .factItem {
+    text-align: center;
+  }
   .mainSection {
     padding: 56px 16px;
   }

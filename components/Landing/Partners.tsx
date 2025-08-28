@@ -3,6 +3,7 @@
 import { Row, Col, Divider, Typography } from 'antd';
 import Image from 'next/image';
 import styles from './Landing.module.css';
+import { useT } from '@/components/LocaleProvider';
 
 import Atlantia from '../../public/partners/atlantia_logo.svg';
 import Azteca from '../../public/partners/azteca_logo.svg';
@@ -29,10 +30,12 @@ const logos = [
 const { Title } = Typography;
 
 export default function LogoGrid() {
+  const t = useT();
+
   return (
     <section className={styles.partners}>
       <Row justify="center" align="middle">
-        <Title level={4}>Empresas con las que he trabajado</Title>
+        <Title level={4}>{t('landing_companies_title')}</Title>
         <Divider className={styles.partnersDivider}></Divider>
       </Row>
       <Row wrap justify="space-evenly" gutter={[0, 48]}>

@@ -25,7 +25,7 @@ export default function NotFound() {
           sizes="(max-width: 768px) 80vw, 420px"
         />
         <h1 style={{ margin: '24px 0' }}>Missing something?</h1>
-        <Link href="/es">
+        <Link href="/">
           <Button
             type="primary"
             style={{

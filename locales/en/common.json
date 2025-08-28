@@ -7,7 +7,21 @@
   "navbar_language_en": "En",
   "navbar_language_es": "Es",
   "landing_greeting": "Hi, I'm Andrés Hernández",
-  "landing_title": "Junior Data Scientist & Frontend Developer (React/Next.js). I turn data into product: analysis, modeling, and visualization to drive clear decisions and accessible UIs, using Python/SQL, EDA, and metrics/dashboards.",
+  "landing_title": "Frontend Developer (React/Next.js) & Jr Data Scientist. I turn data into product: analysis, modeling, and visualization to drive clear decisions and accessible UIs, using Python/SQL, EDA, and metrics/dashboards.",
   "landing_companies_title": "Companies I've worked with",
-  "landing_download_resume": "Download Resume"
+  "landing_download_resume": "Download Resume",
+
+  "about_title": "About",
+
+  "about_random_facts_title": "Random facts",
+  "about_random_fact_one": "Father of over 150 plants",
+  "about_random_fact_two": "Manga and anime enthusiast",
+  "about_random_fact_three": "Co-founder of a Mexican tech startup",
+  "about_random_fact_four": "70s and 80s music fan",
+  "about_random_fact_five": "ENTP-A personality",
+  "about_random_fact_six": "Bartender by night",
+  "about_subtitle": "I’m a Front-End Developer and Junior Data Scientist based in NYC.",
+  "about_description": "I'm a Front-End Developer and Jr Data Scientist based in NYC. Since 2019, I have specialized in Front-End development with React, Next.js, and TypeScript, prioritizing performance and accessibility. I'm from Mexico City and currently live in New York. When I'm not coding, I'm tending to my plants.",
+
+  "about_skills": "Tech Skills"
 }

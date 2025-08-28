@@ -68,6 +68,12 @@
   object-fit: cover;
   width: 100%;
   height: 100%;
+  transition: transform 0.3s ease;
+  border: 4px solid #f7f7f7;
+
+  border-radius: 9999px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  cursor: default;
 }
 
 /* Mobile tweaks */
