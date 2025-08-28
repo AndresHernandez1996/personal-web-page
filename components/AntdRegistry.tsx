@@ -5,8 +5,9 @@ import { useServerInsertedHTML } from 'next/navigation';
 import { StyleProvider, createCache, extractStyle } from '@ant-design/cssinjs';
 
 export default function AntdRegistry({ children }: { children: React.ReactNode }) {
-  // Cache por request; memo evita recrearlo en cada render del cliente
-  const cache = React.useMemo(() => createCache(), []);
+  // crear el cache una sola vez por request/cliente
+  const [cache] = React.useState(() => createCache());
+
   useServerInsertedHTML(() => (
     <style id="antd" dangerouslySetInnerHTML={{ __html: extractStyle(cache, true) }} />
   ));

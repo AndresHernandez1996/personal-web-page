@@ -8,6 +8,7 @@ import esMessages from '@/locales/es/common.json';
 import enMessages from '@/locales/en/common.json';
 import Layout, { Content } from 'antd/es/layout/layout';
 import AppFooter from '@/components/Footer';
+import PageTransition from '@/components/Ui/PageTransition';
 
 export const generateStaticParams = () => [{ locale: 'es' }, { locale: 'en' }];
 
@@ -42,7 +43,9 @@ export default async function LocaleLayout({
         <LocaleProvider locale={locale} messages={messages}>
           <Layout>
             <Header />
-            <Content className="main-container">{children}</Content>
+            <Content className="main-container">
+              <PageTransition>{children}</PageTransition>
+            </Content>
             <AppFooter />
           </Layout>
         </LocaleProvider>

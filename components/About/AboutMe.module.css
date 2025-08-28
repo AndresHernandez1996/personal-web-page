@@ -16,7 +16,7 @@
   width: 100%;
   background: inherit; /* verde */
   color: var(--color-secondary);
-  padding: 60px 82px 0;
+  padding: 50px 82px 0;
 }
 
 .darkSection {
@@ -148,5 +148,8 @@
   }
   .monstera {
     display: none;
+  }
+  .factsection {
+    padding-bottom: 50px;
   }
 }
