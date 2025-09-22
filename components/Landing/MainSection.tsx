@@ -31,8 +31,8 @@ export default function MainSection({ photoSrc = Yayo_pic }: MainSectionProps) {
             target="_blank"
             href={
               locale === 'en'
-                ? 'https://drive.google.com/file/d/1eeMzHw4lT1jmB4iTy89lCNpbTvPLiF1H/view?usp=sharing'
-                : 'https://drive.google.com/file/d/1-GI7H7yo8CezMLsyKBWEhgh2vJSLg7Zg/view?usp=sharing'
+                ? process.env.NEXT_PUBLIC_LINK_RESUME_EN
+                : process.env.NEXT_PUBLIC_LINK_RESUME_ES
             }
             type="primary"
             size="large"
