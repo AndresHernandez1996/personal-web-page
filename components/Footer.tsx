@@ -13,7 +13,7 @@ const AppFooter: React.FC = () => {
   return (
     <Footer style={{ textAlign: 'center', background: '#f0f2f5', padding: '24px 0' }}>
       <Space direction="vertical" size="small">
-        <Text strong>© {new Date().getFullYear()} Yayo</Text>
+        <Text strong>2023 Yayo</Text>
         <Text italic type="secondary">
           {t('footer_made')}
         </Text>
