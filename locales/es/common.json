@@ -25,6 +25,6 @@
 
   "about_skills": "Habilidades técnicas",
   "about_history_title": "Un poco de mi historia",
-  "about_history": "Comencé en tecnología en 2018, mientras trabajaba en Rappi. Me fascinó crear soluciones y automatizar procesos, así que di el salto al bootcamp de Full-Stack en Ironhack. Desde entonces me enfoqué en el Front-End: he construido productos con React y Next.js para organizaciones como Zurich, MetLife y el Gobierno de Guadalajara, además de proyectos de consultoría (por ejemplo, una plataforma de auditorías para retail y dashboards en tiempo real con ECharts). Para complementar, cursé un programa de nueve meses en Ciencia de Datos en TripleTen (Python, SQL, EDA y ML), lo que me ayuda a tomar decisiones guiadas por datos en cada proyecto.",
+  "about_history": "Comencé en tecnología en 2019, mientras trabajaba en Rappi. Me fascinó crear soluciones y automatizar procesos, así que di el salto al bootcamp de Full-Stack en Ironhack. Desde entonces me enfoqué en el Front-End: he construido productos con React y Next.js para organizaciones como Zurich, MetLife y el Gobierno de Guadalajara, además de proyectos de consultoría (por ejemplo, una plataforma de auditorías para retail y dashboards en tiempo real con ECharts). Para complementar, cursé un programa de nueve meses en Ciencia de Datos en TripleTen (Python, SQL, EDA y ML), lo que me ayuda a tomar decisiones guiadas por datos en cada proyecto.",
   "footer_made": "Desarrollado con React, NextJs, Ant Design & ❤️"
 }
